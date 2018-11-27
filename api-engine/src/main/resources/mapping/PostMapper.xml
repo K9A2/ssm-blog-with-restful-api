@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.stormlin.blog.dao.PostDao">
+
+    <!-- 获取文章 Profile 的 Mapper -->
+    <resultMap id="PostProfileMap" type="com.stormlin.blog.model.PostProfile">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="description" property="description" jdbcType="VARCHAR"/>
+        <result column="tag" property="tag" jdbcType="VARCHAR"/>
+        <result column="create_Time" property="createTime" jdbcType="DATE"/>
+        <result column="modify_Time" property="modifyTime" jdbcType="DATE"/>
+        <result column="is_top" property="isTop" jdbcType="SMALLINT"/>
+    </resultMap>
+
+    <!-- 获取文章 HTML 代码的 Mapper -->
+    <resultMap id="PostHtmlMap" type="com.stormlin.blog.model.PostHtml">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="html" property="html" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- 获取文章 Markdown 代码的 Mapper -->
+    <resultMap id="PostMarkdownMap" type="com.stormlin.blog.model.PostMarkdown">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="markdown" property="markdown" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- 获取所有的文章的 Profile -->
+    <select id="getAllPostProfile" resultMap="PostProfileMap">
+        SELECT *
+        FROM blog.post_profile
+    </select>
+
+    <!-- 根据文章 ID 获取指定文章 Profile -->
+    <select id="getPostProfileById" parameterType="java.lang.Long" resultMap="PostProfileMap">
+        SELECT *
+        FROM blog.post_profile
+        WHERE id = #{postId}
+    </select>
+
+    <!-- 根据文章 ID 获取指定文章的 HTML 代码 -->
+    <select id="getPostHtml" parameterType="java.lang.Long" resultMap="PostHtmlMap">
+        SELECT *
+        FROM blog.post_html
+        WHERE id = #{postId}
+    </select>
+
+    <!-- 根据文章 ID 获取指定文章的 Markdown 代码 -->
+    <select id="getPostMarkdown" parameterType="java.lang.Long" resultMap="PostMarkdownMap">
+        SELECT *
+        FROM blog.post_markdown
+        WHERE id = #{postId}
+    </select>
+
+</mapper>

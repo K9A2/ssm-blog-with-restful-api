@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  background-color: #f7f7f7;
+}
+
+a, :hover, :visited, :visited {
+  text-decoration: none;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+  display: block;
+}

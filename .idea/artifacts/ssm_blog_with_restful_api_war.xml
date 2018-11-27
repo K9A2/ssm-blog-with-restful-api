@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ssm-blog-with-restful-api:war">
+    <output-path>$PROJECT_DIR$/api-engine/target</output-path>
+    <root id="archive" name="ssm-blog-with-restful-api.war">
+      <element id="artifact" artifact-name="ssm-blog-with-restful-api:war exploded" />
+    </root>
+  </artifact>
+</component>

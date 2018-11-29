@@ -12,17 +12,22 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'App',
       component: App
     },
     {
       path: '/home',
-      name: 'index',
       component: Index
     },
     {
+      path: '/index',
+      component: App
+    },
+    {
+      path: '/index.html',
+      component: App
+    },
+    {
       path: '/blog/:id',
-      name: 'blog',
       component: Blog
     }
   ]

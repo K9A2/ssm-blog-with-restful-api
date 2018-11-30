@@ -11,12 +11,11 @@
 </template>
 
 <script>
-/* 基础组件 */
+
+/* 页面组件 */
 import Navigation from '../components/Navigation.vue'
 import BlogTitle from '../components/BlogTitle.vue'
 import Foot from '../components/Foot.vue'
-
-/* 页面组件 */
 import IndexPostList from '../components/IndexPostList.vue'
 
 export default {
@@ -33,8 +32,9 @@ export default {
     return {}
   }
 }
+
 </script>
 
 <style scoped>
-@import url('../../static/css/style.css');
+  @import url('../../static/css/style.css');
 </style>

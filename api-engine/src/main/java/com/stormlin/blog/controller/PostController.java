@@ -32,7 +32,7 @@ public class PostController {
      * @return 以 Response 封装的文章 Profile。
      */
     @ResponseBody
-    @RequestMapping("/api/profile/{id}")
+    @RequestMapping("/profile/{id}")
     public Response getPostProfile(@PathVariable String id) {
 
         logger.info("收到了查询具有以下 ID 的文章 Profile 的请求：" + id);
@@ -52,7 +52,6 @@ public class PostController {
                 logger.error(e.toString());
                 response.setBody(StatusCode.InternalServerError);
             }
-            logger.info(response.getBody());
             return response;
         }
 
@@ -85,7 +84,7 @@ public class PostController {
      * @return 该文章的 HTML 代码
      */
     @ResponseBody
-    @RequestMapping("/post/{id}")
+    @RequestMapping("/html/{id}")
     public Response getPostHtml(@PathVariable String id) {
 
         logger.info("收到了查询具有以下 ID 的文章 HTML 的请求：" + id);

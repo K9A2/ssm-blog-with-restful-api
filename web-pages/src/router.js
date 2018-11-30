@@ -27,7 +27,8 @@ export default new Router({
       component: App
     },
     {
-      path: '/blog/:id',
+      path: '/blog/',
+      name: 'blog',
       component: Blog
     }
   ]
